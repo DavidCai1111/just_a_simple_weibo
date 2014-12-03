@@ -1,0 +1,10 @@
+//to insert weibo
+extends layout
+
+block content
+  h1 insert weibo
+    form(action="/admin/insert",method="post")
+      input(type="hidden",name="wb[name]",value="#{user.name}")
+      label(for="inputContent") #{user.name} 说：
+        input#inputContent(type="textarea",name="wb[content]")
+      button(type="submit") 录入

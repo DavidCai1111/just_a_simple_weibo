@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 注册页
+  form(action="/admin/signup",method="post")
+    label(for="userName") 输入用户名
+      input#userName(type="text",name="user[name]")
+    label(for="userPassword") 输入密码
+      input#userPassword(type="text",name="user[password]")
+    button(type="submit") 注册

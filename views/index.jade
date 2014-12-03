@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 content all
+  h2
+    a(href="/admin/insert") 说一句！
+  ul#wbs
+    each item in wbs
+      li #{item.name}说： #{item.content} &nbsp&nbsp&nbsp&nbsp&nbsp
+        if user && user.name === item.name
+          button.delete-btn(type="button"  data-name="#{item.name}" data-id="#{item._id}") 删除
+  script(type="text/javascript",src="/javascripts/index.js")

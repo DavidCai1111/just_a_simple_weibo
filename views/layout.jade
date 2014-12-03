@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type="text/javascript",src="/javascripts/jquery-2.1.1.min.js")
+  body
+    h1 Just a simple Weibo
+    block content
+    if user
+      p 欢迎你,#{user.name}&nbsp&nbsp&nbsp
+        a(href="/admin/logout") 登出
+    else
+      p 请
+        a(href="/admin/login") 登录
+      span 或
+        a(href="/admin/signup") 注册
+    p By
+      a(href="http://weibo.com/1778884547/profile?rightmod=1&wvr=6&mod=personinfo") David
