@@ -4,20 +4,20 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
     script(type="text/javascript",src="/javascripts/jquery-2.1.1.min.js")
     script(type="text/javascript",src="/javascripts/bootstrap.min.js")
-    script(type="text/javascript",src="/javascripts/npm.js")
   body
-    h1 Just a simple Weibo
-    block content
-    if user
-      p 欢迎你,#{user.name}&nbsp&nbsp&nbsp
-        a(href="/admin/logout") 登出
-    else
-      p 请
-        a(href="/admin/login") 登录
-      span 或
-        a(href="/admin/signup") 注册
-    p By
-      a(href="http://weibo.com/1778884547/profile?rightmod=1&wvr=6&mod=personinfo") David
+    h1.col-md-12.text-center Just a simple Weibo
+    .container
+      .row
+      block content
+      if user
+        p 欢迎你,#{user.name}&nbsp&nbsp&nbsp
+          a(href="/admin/logout") 登出
+      else
+        p 请
+          a(href="/admin/login") 登录
+        span 或
+          a(href="/admin/signup") 注册
+      p.text-right By
+        a(href="http://weibo.com/1778884547/profile?rightmod=1&wvr=6&mod=personinfo") David

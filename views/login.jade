@@ -1,10 +1,16 @@
 extends layout
 
 block content
-  h1 登录页
-  form(action="/admin/login",method="post")
-    label(for="userName") 输入用户名
-      input#userName(type="text",name="user[name]")
-    label(for="userPassword") 输入密码
-      input#userPassword(type="text",name="user[password]")
-    button(type="submit") 登录
+  .row
+    h1.text-center 登录页
+    form.form-horizontal.col-md-6.col-md-offset-3(action="/admin/login",method="post",role="form")
+      .form-group
+        label.col-sm-2(for="userName") 输入用户名:
+        .col-sm-10
+          input#userName.form-control(type="text",name="user[name]")
+      .form-group
+        label.col-sm-2(for="userPassword") 输入密码:
+        .col-sm-10
+          input#userPassword.form-control(type="text",name="user[password]")
+      .col-sm-offset-2.col-sm-10
+        button.btn.btn-primary(type="submit") 登录

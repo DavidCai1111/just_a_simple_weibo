@@ -1,12 +1,26 @@
 extends layout
 
 block content
-  h1 content all
-  h2
-    a(href="/admin/insert") 说一句！
-  ul#wbs
-    each item in wbs
-      li #{item.name}说： #{item.content} &nbsp&nbsp&nbsp&nbsp&nbsp
-        if user && user.name === item.name
-          button.delete-btn(type="button"  data-name="#{item.name}" data-id="#{item._id}") 删除
+  .row
+    .col-md-12
+      h2.text-center --content all
+      h3.text-left
+        if user
+          a.btn.btn-primary(href="/admin/insert") #{user.name}同学，说一句吧！
+        else
+          a.btn.btn-primary(href="/admin/insert") 先登录，再说一句吧！
+      table.table.table-bordered
+        thead
+          th.col-sm-10.text-center  内容
+          th.col-sm-2.text-center  操作
+        tbody
+          each item in wbs
+            tr
+              td.text-center  #{item.name}说： #{item.content}
+                if user && user.name === item.name
+                  td.text-center
+                    button.delete-btn.btn.btn-danger(type="button"  data-name="#{item.name}" data-id="#{item._id}") 删除
+                else
+                  td.text-center
+                    button.btn.opacity(type="button") 删除
   script(type="text/javascript",src="/javascripts/index.js")
